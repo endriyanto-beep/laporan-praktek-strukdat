@@ -61,7 +61,7 @@ int main() {
 > Output
 > ![Screenshot bagian x](soal1.png)
 
-Pada soal Unguided 1, program yang dibuat tergolong mudah. Saya diminta mendeklarasikan dua buah variabel dengan tipe data float untuk menampung nilai masukan dari pengguna. Nilai tersebut kemudian diproses menggunakan operasi aritmatika dasar. Selain itu, saya menambahkan aturan sederhana berupa pengecekan pada bagian pembagian, karena tidak mungkin sebuah bilangan dibagi dengan nol.
+Pada program ini, saya diminta membuat program untuk menampilkan hasil transpose dari sebuah matriks berukuran 3x3. Program mendeklarasikan dua array dua dimensi, yaitu matriks sebagai data awal dan transpose untuk menampung hasil transpose. Proses transpose dilakukan dengan menukar posisi elemen matriks menggunakan perulangan bersarang, di mana nilai matriks[i][j] dipindahkan ke transpose[j][i]. Setelah itu, program menampilkan matriks awal dan hasil transposenya ke layar. Program ini menunjukkan cara sederhana melakukan operasi transpose pada matriks menggunakan array dua dimensi di C++.
 
 ### Soal 2
 
@@ -93,7 +93,7 @@ int main() {
 
 penjelasan kode
 
-Program pada soal Unguided 2 terasa lebih menantang dibanding sebelumnya. Di dalam program, saya membuat sebuah fungsi bernama sebutAngka(int n) yang bertugas memproses angka sesuai dengan aturan tertentu. Apabila input bernilai 0, maka fungsi akan mengembalikan kata “nol”, sedangkan jika bernilai 100 hasilnya adalah “seratus”. Untuk angka kurang dari 10, program langsung mengambil kata yang sesuai dari array satuan. Khusus untuk rentang 10–19, digunakan aturan khusus, misalnya 10 menjadi “sepuluh”, 11 menjadi “sebelas”, sementara 12 hingga 19 akan dikonversi menjadi bentuk [satuan] belas. Sementara itu, angka 20 sampai 99 dibentuk dengan menuliskan nilai puluhannya, seperti “dua puluh” atau “tiga puluh”, lalu ditambahkan kata satuan jika angkanya tidak genap puluhan.
+Pada program ini, saya diminta membuat fungsi untuk mengkuadratkan sebuah bilangan menggunakan parameter referensi. Program mendeklarasikan fungsi kuadratkan(int &n) yang menerima parameter n dengan tanda &, artinya nilai variabel yang dikirim akan langsung berubah di memori aslinya. Di dalam fungsi, nilai n dikalikan dengan dirinya sendiri (n = n * n) untuk menghasilkan nilai kuadrat. Pada fungsi main, variabel nilai diinisialisasi dengan angka 5, kemudian ditampilkan nilai awalnya. Setelah fungsi kuadratkan dipanggil, nilai nilai menjadi 25 karena proses pengkuadratan dilakukan secara langsung melalui referensi. Program ini menunjukkan penggunaan parameter referensi untuk memodifikasi nilai variabel dari luar fungsi.
 
 ## Referensi
 
