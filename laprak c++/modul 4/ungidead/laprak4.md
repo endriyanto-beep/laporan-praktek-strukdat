@@ -120,7 +120,10 @@ int main() {
 ```
 
 > Output
-> ![Screenshot bagian x](1.png)
+> ![Screenshot bagian x](e1.png)
+
+> Output
+> ![Screenshot bagian x](e2.png)
 
 Pada soal Unguided 1, program yang dibuat tergolong mudah. Saya diminta mendeklarasikan dua buah variabel dengan tipe data float untuk menampung nilai masukan dari pengguna. Nilai tersebut kemudian diproses menggunakan operasi aritmatika dasar. Selain itu, saya menambahkan aturan sederhana berupa pengecekan pada bagian pembagian, karena tidak mungkin sebuah bilangan dibagi dengan nol.
 
@@ -200,7 +203,7 @@ int main() {
 ```
 
 > Output
-> ![Screenshot bagian x](2.png)
+> ![Screenshot bagian x](e3.png)
 
 penjelasan kode
 
