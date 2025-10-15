@@ -158,7 +158,7 @@ int main() {
 ```
 
 > Output
-> ![Screenshot bagian x](3.png)
+> ![Screenshot bagian x](L2.png)
 
 Kode di atas adalah isi dari file main.cpp, yang berfungsi untuk mencoba atau menguji ADT pelajaran yang sudah dibuat. Di dalamnya, dibuat dua variabel string yaitu namaPel berisi “Struktur Data” dan kodePel berisi “STD”. Lalu, program memanggil fungsi create_pelajaran untuk membuat objek pel berdasarkan dua data tersebut, dan hasilnya ditampilkan ke layar dengan memanggil fungsi tampil_pelajaran. Jadi intinya, program ini menampilkan informasi pelajaran dengan nama “Struktur Data” dan kode “STD” menggunakan fungsi dari ADT yang telah dibuat sebelumnya.
 
@@ -213,7 +213,7 @@ int main() {
 ```
 
 > Output
-> ![Screenshot bagian x](3.png)
+> ![Screenshot bagian x](L3.png)
 
 Program di atas membuat dan menampilkan dua buah **matriks (A dan B)** berukuran 3x3, lalu menukar salah satu elemen di posisi tertentu antara kedua matriks. Struktur `Matrix` digunakan untuk menyimpan data dalam bentuk array 3x3, sesuai konsep **ADT (Abstract Data Type)** agar data matriks lebih terorganisir. Fungsi `tampil` menampilkan isi matriks ke layar, sedangkan fungsi `tukar_posisi` menukar elemen pada baris dan kolom tertentu antara matriks A dan B. Dalam program utama, elemen di posisi `[0][2]` (baris pertama kolom ketiga) ditukar, kemudian hasil perubahan kedua matriks ditampilkan kembali ke layar.
 
