@@ -125,8 +125,7 @@ int main() {
 > Output
 > ![Screenshot bagian x](e2.png)
 
-Pada soal Unguided 1, program yang dibuat tergolong mudah. Saya diminta mendeklarasikan dua buah variabel dengan tipe data float untuk menampung nilai masukan dari pengguna. Nilai tersebut kemudian diproses menggunakan operasi aritmatika dasar. Selain itu, saya menambahkan aturan sederhana berupa pengecekan pada bagian pembagian, karena tidak mungkin sebuah bilangan dibagi dengan nol.
-
+Pada soal Unguided 1,Program ini digunakan untuk mengelola antrian pembeli dengan menggunakan linked list. Setiap pembeli punya data nama dan pesanan. Fungsi tambahantrian() dipakai untuk menambah pembeli ke akhir antrian, layaniantrian() untuk melayani dan menghapus pembeli pertama, dan tampilkanantrian() untuk melihat semua pembeli yang sedang antre. Program ini berjalan dengan sistem FIFO (First In, First Out), artinya pembeli yang datang duluan akan dilayani lebih dulu.
 ### Soal 2
 
 ```go
@@ -207,7 +206,8 @@ int main() {
 
 penjelasan kode
 
-Program pada soal Unguided 2 terasa lebih menantang dibanding sebelumnya. Di dalam program, saya membuat sebuah fungsi bernama sebutAngka(int n) yang bertugas memproses angka sesuai dengan aturan tertentu. Apabila input bernilai 0, maka fungsi akan mengembalikan kata “nol”, sedangkan jika bernilai 100 hasilnya adalah “seratus”. Untuk angka kurang dari 10, program langsung mengambil kata yang sesuai dari array satuan. Khusus untuk rentang 10–19, digunakan aturan khusus, misalnya 10 menjadi “sepuluh”, 11 menjadi “sebelas”, sementara 12 hingga 19 akan dikonversi menjadi bentuk [satuan] belas. Sementara itu, angka 20 sampai 99 dibentuk dengan menuliskan nilai puluhannya, seperti “dua puluh” atau “tiga puluh”, lalu ditambahkan kata satuan jika angkanya tidak genap puluhan.
+Program ini memakai **linked list** untuk menyimpan data angka dan membalik urutannya. Setiap data disimpan dalam node yang punya isi `data` dan penunjuk `next`. Fungsi `insertBelakang()` menambah data di bagian akhir list, sedangkan `tampilkanList()` menampilkan semua data dari awal sampai akhir. Fungsi `membaliklist()` berfungsi untuk membalik urutan data dengan cara menukar arah pointer antar node. Di bagian `main()`, program menambahkan angka 1, 2, dan 3 ke list, lalu menampilkan urutannya sebelum dan sesudah dibalik — hasil akhirnya jadi dari `1 2 3` menjadi `3 2 1`.
+
 
 
 ## Referensi
