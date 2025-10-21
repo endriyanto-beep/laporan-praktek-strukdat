@@ -150,9 +150,10 @@ int main() {
 ```
 
 > Output
-> ![Screenshot bagian x](e1.png)
+> ![Screenshot bagian x](s1.png)
 
-Pada soal Unguided 1,Program ini digunakan untuk mengelola antrian pembeli dengan menggunakan linked list. Setiap pembeli punya data nama dan pesanan. Fungsi tambahantrian() dipakai untuk menambah pembeli ke akhir antrian, layaniantrian() untuk melayani dan menghapus pembeli pertama, dan tampilkanantrian() untuk melihat semua pembeli yang sedang antre. Program ini berjalan dengan sistem FIFO (First In, First Out), artinya pembeli yang datang duluan akan dilayani lebih dulu.
+Program ini menjelaskan tentang mengelola **antrian pembeli** menggunakan **linked list**, di mana setiap pembeli memiliki data **nama** dan **pesanan**. Fitur yang ada di program ini yaitu **menambah antrian**, **melayani antrian (menghapus dari depan)**, **menampilkan seluruh antrian**, serta **mencari pembeli berdasarkan nama**. Data pembeli disimpan berurutan sesuai urutan masuk, dan program berjalan melalui menu sampai pengguna memilih keluar.
+
 ### Soal 2.searcing buku
 
 ```go
@@ -310,11 +311,12 @@ int main() {
 ```
 
 > Output
-> ![Screenshot bagian x](e3.png)
+> ![Screenshot bagian x](s2.png)
 
 penjelasan kode
 
-Program ini memakai **linked list** untuk menyimpan data angka dan membalik urutannya. Setiap data disimpan dalam node yang punya isi `data` dan penunjuk `next`. Fungsi `insertBelakang()` menambah data di bagian akhir list, sedangkan `tampilkanList()` menampilkan semua data dari awal sampai akhir. Fungsi `membaliklist()` berfungsi untuk membalik urutan data dengan cara menukar arah pointer antar node. Di bagian `main()`, program menambahkan angka 1, 2, dan 3 ke list, lalu menampilkan urutannya sebelum dan sesudah dibalik — hasil akhirnya jadi dari `1 2 3` menjadi `3 2 1`.
+Program ini menejelaskan tentang mengelola data buku dengan **linked list**, di mana setiap buku punya data **judul**, **penulis**, dan **ISBN**. Fitur utamanya yaitu **menambah**, **menampilkan**, **mencari**, dan **menghapus** buku berdasarkan ISBN. Semua proses dilakukan lewat menu , dan program berjalan terus sampai pengguna memilih keluar.
+
 
 
 
