@@ -247,10 +247,12 @@ int main() {
 
 
 ```
-
 > Output
+
 > ![Screenshot bagian x](a1.png)
+
 > ![Screenshot bagian x](a2.png)
+
 > ![Screenshot bagian x](a3.png)
 
 penjelasan kode
