@@ -1,6 +1,6 @@
 
 
-# <h1 align="center">Laporan Praktikum Modul 7 <br>  CODE BLOCKS IDE & PENGENALAN BAHASA C++</h1>
+# <h1 align="center">Laporan Praktikum Modul 8 <br>  CODE BLOCKS IDE & PENGENALAN BAHASA C++</h1>
 <p align="center">elfan endriyanto - 103112430040</p>
 
 ## Dasar Teori
@@ -43,7 +43,7 @@ void printInfo(Queue Q);
 ```
 penjelasan kode
 
-Kode STACK_H ini merupakan ADT stack sederhana yang menggunakan array untuk menyimpan data bertipe integer. Struktur Stack memiliki array info sebagai tempat penyimpanan elemen dan variabel top untuk menandai posisi elemen teratas. Di dalam header ini disediakan beberapa operasi dasar stack, seperti membuat stack kosong, menambahkan data ke stack (push), mengambil data teratas (pop), menampilkan isi stack, membalik urutan stack, serta memasukkan data ke stack melalui aliran input.
+Kode QUEUE_H ini merupakan ADT queue sederhana yang menggunakan array dengan kapasitas maksimum 5 elemen. Struktur Queue memiliki array info untuk menyimpan data serta dua penunjuk, yaitu head sebagai posisi elemen terdepan dan tail sebagai posisi elemen terakhir. Di dalam header ini disediakan fungsi untuk membuat queue kosong, mengecek apakah queue kosong atau penuh, menambahkan data ke queue (enqueue), mengambil data terdepan dari queue (dequeue), serta menampilkan seluruh isi queue. Secara keseluruhan, kode ini menerapkan konsep antrian FIFO (First In First Out) dengan cara yang sederhana dan terstruktur.
 
 ### Soal 1,2 queue1.cpp
 
@@ -116,7 +116,7 @@ void printInfo(Queue Q) {
 ```
 penjelasan kode
 
-Kode stack.cpp ini merupakan implementasi ADT stack berbasis array dengan kapasitas maksimal 20 elemen. Program ini menyediakan operasi dasar stack seperti membuat stack kosong, menambahkan data ke stack (push), mengambil data teratas (pop), dan menampilkan isi stack dari elemen teratas ke bawah. Selain itu, terdapat fungsi untuk membalik urutan stack dengan bantuan stack sementara, memasukkan data secara terurut menaik, serta membaca input karakter dari keyboard dan menyimpannya ke dalam stack dalam bentuk angka. Secara keseluruhan, kode ini digunakan untuk mengelola data stack secara sederhana sesuai konsep LIFO (Last In First Out).
+Kode queue.cpp ini merupakan implementasi dari ADT queue berbasis array dengan kapasitas terbatas. Program ini mengatur proses pembuatan queue kosong, pengecekan kondisi kosong dan penuh, penambahan data ke antrian (enqueue), serta pengambilan data dari antrian (dequeue) sesuai konsep FIFO. Saat dequeue dilakukan, elemen-elemen di dalam array digeser ke depan agar posisi head tetap di indeks awal. Selain itu, fungsi printInfo digunakan untuk menampilkan isi queue beserta posisi head dan tail, sehingga kondisi queue dapat terlihat dengan jelas saat program dijalankan.
 
 ### Soal 1,3 main1.cpp
 
@@ -157,11 +157,10 @@ int main() {
 ```
 > Output
 
-> ![Screenshot bagian x](b1.png)
+> ![Screenshot bagian x](c1.png)
 
 penjelasan kode
-
-Program main.cpp ini menunjukkan cara kerja stack dengan operasi push, pop, dan pembalikan stack. Dari output terlihat bahwa setelah beberapa kali push dan pop, isi stack terakhir adalah 9 2 4 3 dengan 9 sebagai elemen paling atas (TOP), sesuai prinsip LIFO. Ketika fungsi balikStack dipanggil, urutan elemen stack dibalik sehingga elemen yang awalnya paling bawah menjadi paling atas, menghasilkan output 3 4 2 9. Ini menandakan bahwa fungsi pembalikan stack bekerja dengan benar.
+Program main.cpp ini menunjukkan hasil pengujian ADT queue berbasis array. Dari output terlihat bahwa pada awal program queue masih kosong dengan nilai head dan tail sama-sama -1. Saat operasi enqueue dilakukan, data masuk ke queue secara berurutan dan posisi tail bertambah, sedangkan head tetap di awal. Ketika dequeue dijalankan, elemen paling depan dihapus sesuai konsep FIFO, lalu isi queue bergeser ke depan sehingga urutan data tetap rapi. Proses ini terus berlangsung sampai semua data habis, dan pada kondisi akhir queue kembali kosong dengan head dan tail bernilai -1.
 
 ### Soal 2,1 queue2.h
 
@@ -189,8 +188,9 @@ void printInfo(Queue Q);
 
 
 ```
+penjelasan kode
 
-Kode STACK_H ini merupakan ADT stack sederhana yang menggunakan array untuk menyimpan data bertipe integer. Struktur Stack memiliki array info sebagai tempat penyimpanan elemen dan variabel top untuk menandai posisi elemen teratas. Di dalam header ini disediakan beberapa operasi dasar stack, seperti membuat stack kosong, menambahkan data ke stack (push), mengambil data teratas (pop), menampilkan isi stack, membalik urutan stack, serta memasukkan data ke stack melalui aliran input.
+Kode QUEUE_H ini berisi definisi ADT queue sederhana dengan kapasitas maksimal 5 elemen yang disimpan menggunakan array. Struktur Queue memiliki variabel head untuk menunjuk elemen terdepan dan tail untuk menunjuk elemen terakhir dalam antrian. Di dalam header ini disediakan fungsi-fungsi dasar untuk membuat queue kosong, mengecek apakah queue kosong atau penuh, menambahkan data ke antrian (enqueue), menghapus data terdepan (dequeue), serta menampilkan isi queue. Seluruh operasi queue ini menerapkan konsep FIFO (First In First Out) secara terstruktur dan mudah dipahami.
 
 ### Soal 2,2 queue2.cpp
 
@@ -265,7 +265,7 @@ void printInfo(Queue Q) {
 ```
 penjelasan kode
 
-Kode stack.cpp ini merupakan implementasi ADT stack berbasis array dengan kapasitas maksimal 20 elemen. Program ini menyediakan operasi dasar stack seperti membuat stack kosong, menambahkan data ke stack (push), mengambil data teratas (pop), dan menampilkan isi stack dari elemen teratas ke bawah. Selain itu, terdapat fungsi untuk membalik urutan stack dengan bantuan stack sementara, memasukkan data secara terurut menaik, serta membaca input karakter dari keyboard dan menyimpannya ke dalam stack dalam bentuk angka. Secara keseluruhan, kode ini digunakan untuk mengelola data stack secara sederhana sesuai konsep LIFO (Last In First Out).
+Kode queue2.cpp ini merupakan implementasi ADT circular queue (queue melingkar) berbasis array. Queue dibuat dengan penanda head dan tail yang akan berputar menggunakan operasi modulo (% MaxEl) sehingga ruang array bisa dimanfaatkan kembali tanpa perlu menggeser data. Program ini menyediakan fungsi untuk membuat queue kosong, mengecek kondisi kosong dan penuh, menambahkan data ke queue (enqueue), menghapus data terdepan (dequeue), serta menampilkan isi queue sesuai urutan antrian. Dengan konsep circular queue ini, proses enqueue dan dequeue menjadi lebih efisien dan tetap mengikuti prinsip FIFO (First In First Out).
 
 ### Soal 2,3 main2.cpp
 
@@ -305,11 +305,11 @@ int main() {
 ```
 > Output
 
-> ![Screenshot bagian x](b1.png)
+> ![Screenshot bagian x](c2.png)
 
 penjelasan kode
 
-Program main.cpp ini menunjukkan cara kerja stack dengan operasi push, pop, dan pembalikan stack. Dari output terlihat bahwa setelah beberapa kali push dan pop, isi stack terakhir adalah 9 2 4 3 dengan 9 sebagai elemen paling atas (TOP), sesuai prinsip LIFO. Ketika fungsi balikStack dipanggil, urutan elemen stack dibalik sehingga elemen yang awalnya paling bawah menjadi paling atas, menghasilkan output 3 4 2 9. Ini menandakan bahwa fungsi pembalikan stack bekerja dengan benar.
+Program main.cpp ini digunakan untuk menguji implementasi circular queue. Dari output terlihat bahwa pada awal program queue masih kosong dengan nilai head dan tail sama-sama -1. Saat operasi enqueue dilakukan, data masuk ke queue secara berurutan dan posisi tail bertambah, sementara head menunjuk elemen terdepan. Ketika dequeue dijalankan, elemen paling depan dihapus dan head berpindah ke indeks berikutnya tanpa perlu menggeser isi array, karena queue bersifat melingkar. Proses ini terus berlanjut hingga seluruh data dikeluarkan, dan pada kondisi akhir queue kembali kosong dengan head dan tail bernilai -1. Output tersebut menunjukkan bahwa mekanisme circular queue sudah berjalan dengan benar dan tetap mengikuti konsep FIFO.
 
 
 ### Soal 3,1 queue3.h
@@ -337,9 +337,11 @@ void printInfo(Queue Q);
 
 #endif
 
-```
 
-Kode STACK_H ini merupakan ADT stack sederhana yang menggunakan array untuk menyimpan data bertipe integer. Struktur Stack memiliki array info sebagai tempat penyimpanan elemen dan variabel top untuk menandai posisi elemen teratas. Di dalam header ini disediakan beberapa operasi dasar stack, seperti membuat stack kosong, menambahkan data ke stack (push), mengambil data teratas (pop), menampilkan isi stack, membalik urutan stack, serta memasukkan data ke stack melalui aliran input.
+```
+penjelasan kode
+
+Kode QUEUE_H ini merupakan pengembangan ADT queue berbasis array dengan kapasitas maksimum 5 elemen, di mana selain head dan tail, ditambahkan variabel count untuk menyimpan jumlah elemen yang ada di dalam queue. Dengan adanya count, proses pengecekan kondisi kosong dan penuh menjadi lebih mudah dan jelas, tanpa hanya bergantung pada posisi indeks. Header ini juga menyediakan fungsi untuk membuat queue kosong, mengecek apakah queue kosong atau penuh, menambahkan data (enqueue), menghapus data terdepan (dequeue), serta menampilkan isi queue. Seluruh mekanisme tetap mengikuti konsep FIFO (First In First Out).
 
 ### Soal 3,2 queue3.cpp
 
@@ -415,10 +417,11 @@ void printInfo(Queue Q) {
     cout << endl;
 }
 
+
 ```
 penjelasan kode
 
-Kode stack.cpp ini merupakan implementasi ADT stack berbasis array dengan kapasitas maksimal 20 elemen. Program ini menyediakan operasi dasar stack seperti membuat stack kosong, menambahkan data ke stack (push), mengambil data teratas (pop), dan menampilkan isi stack dari elemen teratas ke bawah. Selain itu, terdapat fungsi untuk membalik urutan stack dengan bantuan stack sementara, memasukkan data secara terurut menaik, serta membaca input karakter dari keyboard dan menyimpannya ke dalam stack dalam bentuk angka. Secara keseluruhan, kode ini digunakan untuk mengelola data stack secara sederhana sesuai konsep LIFO (Last In First Out).
+Kode queue3.cpp ini merupakan implementasi ADT circular queue yang ditingkatkan dengan penggunaan variabel count untuk menyimpan jumlah elemen di dalam queue. Dengan adanya count, pengecekan kondisi kosong dan penuh menjadi lebih sederhana dan aman, karena tidak hanya bergantung pada posisi head dan tail. Proses enqueue menambahkan data ke antrian dengan memutar indeks menggunakan modulo, sedangkan dequeue mengambil data terdepan dan mengurangi jumlah elemen. Fungsi printInfo menampilkan isi queue sesuai urutan antrian beserta posisi head dan tail. Secara keseluruhan, implementasi ini lebih rapi dan stabil serta tetap menerapkan konsep FIFO (First In First Out).
 
 ### Soal 3,3 main3.cpp
 
@@ -458,11 +461,11 @@ int main() {
 ```
 > Output
 
-> ![Screenshot bagian x](b1.png)
+> ![Screenshot bagian x](c3.png)
 
 penjelasan kode
 
-Program main.cpp ini menunjukkan cara kerja stack dengan operasi push, pop, dan pembalikan stack. Dari output terlihat bahwa setelah beberapa kali push dan pop, isi stack terakhir adalah 9 2 4 3 dengan 9 sebagai elemen paling atas (TOP), sesuai prinsip LIFO. Ketika fungsi balikStack dipanggil, urutan elemen stack dibalik sehingga elemen yang awalnya paling bawah menjadi paling atas, menghasilkan output 3 4 2 9. Ini menandakan bahwa fungsi pembalikan stack bekerja dengan benar.
+Program main.cpp ini digunakan untuk menguji ADT circular queue dengan variabel count. Dari hasil output terlihat bahwa queue pada awalnya kosong dengan nilai head dan tail -1. Saat dilakukan operasi enqueue, data masuk ke dalam queue secara berurutan dan posisi tail berpindah sesuai mekanisme melingkar, sementara jumlah elemen dicatat oleh count. Ketika dequeue dijalankan, elemen paling depan dihapus, head berpindah ke posisi berikutnya, dan count berkurang. Proses ini terus berlangsung hingga seluruh data keluar dari queue dan akhirnya queue kembali kosong. Output tersebut menunjukkan bahwa pengelolaan queue berjalan dengan benar dan tetap mengikuti konsep FIFO (First In First Out).
 
 
 ## Referensi
