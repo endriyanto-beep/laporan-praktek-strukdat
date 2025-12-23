@@ -41,7 +41,7 @@ void getInputStream(Stack &S);
 
 ```
 
-Kode DOUBLYLIST_H merupakan ADT doubly linked list yang digunakan untuk menyimpan data kendaraan seperti nomor polisi, warna, dan tahun pembuatan. Setiap data disimpan dalam node yang saling terhubung ke depan dan ke belakang, sehingga data bisa diakses dari dua arah. Di dalamnya tersedia fungsi untuk membuat list, menambah, menghapus, mencari, dan menampilkan data kendaraan secara berurutan maupun terbalik.
+Kode STACK_H ini merupakan ADT stack sederhana yang menggunakan array untuk menyimpan data bertipe integer. Struktur Stack memiliki array info sebagai tempat penyimpanan elemen dan variabel top untuk menandai posisi elemen teratas. Di dalam header ini disediakan beberapa operasi dasar stack, seperti membuat stack kosong, menambahkan data ke stack (push), mengambil data teratas (pop), menampilkan isi stack, membalik urutan stack, serta memasukkan data ke stack melalui aliran input.
 
 ### Soal 1,2 Stack.cpp
 
@@ -113,7 +113,7 @@ void getInputStream(Stack &S) {
 ```
 penjelasan kode
 
-Kode Doublylist.cpp ini merupakan implementasi dari ADT doubly linked list yang berfungsi untuk mengelola data kendaraan. Program ini mengatur proses pembuatan list kosong, pembuatan dan penghapusan node, penambahan data di akhir list, pencarian data berdasarkan nomor polisi, serta penampilan data dari depan maupun dari belakang. Selain itu, tersedia juga operasi penghapusan data seperti menghapus elemen pertama, terakhir, dan elemen setelah node tertentu dengan tetap menjaga hubungan pointer next dan prev agar struktur list tetap benar.
+Kode stack.cpp ini merupakan implementasi ADT stack berbasis array dengan kapasitas maksimal 20 elemen. Program ini menyediakan operasi dasar stack seperti membuat stack kosong, menambahkan data ke stack (push), mengambil data teratas (pop), dan menampilkan isi stack dari elemen teratas ke bawah. Selain itu, terdapat fungsi untuk membalik urutan stack dengan bantuan stack sementara, memasukkan data secara terurut menaik, serta membaca input karakter dari keyboard dan menyimpannya ke dalam stack dalam bentuk angka. Secara keseluruhan, kode ini digunakan untuk mengelola data stack secara sederhana sesuai konsep LIFO (Last In First Out).
 
 ### Soal 1,3 main1.cpp
 
@@ -146,11 +146,11 @@ int main() {
 ```
 > Output
 
-> ![Screenshot bagian x](a1.png)
+> ![Screenshot bagian x](b1.png)
 
 penjelasan kode
 
-Kode main.cpp ini digunakan untuk menguji dan menjalankan seluruh fungsi pada ADT doubly linked list kendaraan. Program dimulai dengan membuat list kosong, lalu meminta pengguna memasukkan data kendaraan dan memastikan nomor polisi tidak boleh duplikat sebelum disimpan ke dalam list. Setelah data berhasil dimasukkan, isi list ditampilkan dari belakang ke depan, kemudian program menyediakan fitur pencarian kendaraan berdasarkan nomor polisi dan menampilkan datanya jika ditemukan. Selanjutnya, pengguna dapat menghapus data kendaraan tertentu, baik itu di awal, di akhir, maupun di tengah list, dan hasil akhir list kembali ditampilkan untuk memastikan data sudah terhapus dengan benar.
+Program main.cpp ini menunjukkan cara kerja stack dengan operasi push, pop, dan pembalikan stack. Dari output terlihat bahwa setelah beberapa kali push dan pop, isi stack terakhir adalah 9 2 4 3 dengan 9 sebagai elemen paling atas (TOP), sesuai prinsip LIFO. Ketika fungsi balikStack dipanggil, urutan elemen stack dibalik sehingga elemen yang awalnya paling bawah menjadi paling atas, menghasilkan output 3 4 2 9. Ini menandakan bahwa fungsi pembalikan stack bekerja dengan benar.
 
 ### Soal 1,4 main2.cpp
 
@@ -181,11 +181,11 @@ int main() {
 ```
 > Output
 
-> ![Screenshot bagian x](a1.png)
+> ![Screenshot bagian x](b2.png)
 
 penjelasan kode
 
-Kode main.cpp ini digunakan untuk menguji dan menjalankan seluruh fungsi pada ADT doubly linked list kendaraan. Program dimulai dengan membuat list kosong, lalu meminta pengguna memasukkan data kendaraan dan memastikan nomor polisi tidak boleh duplikat sebelum disimpan ke dalam list. Setelah data berhasil dimasukkan, isi list ditampilkan dari belakang ke depan, kemudian program menyediakan fitur pencarian kendaraan berdasarkan nomor polisi dan menampilkan datanya jika ditemukan. Selanjutnya, pengguna dapat menghapus data kendaraan tertentu, baik itu di awal, di akhir, maupun di tengah list, dan hasil akhir list kembali ditampilkan untuk memastikan data sudah terhapus dengan benar.
+Program main.cpp ini digunakan untuk menguji stack dengan metode pushAscending, yaitu memasukkan data ke dalam stack agar tetap tersusun secara terurut. Dari output terlihat bahwa setelah semua data dimasukkan, isi stack ditampilkan dari elemen teratas ke bawah sehingga urutannya menjadi 9 8 4 3 3 2, dengan 9 sebagai TOP. Ketika fungsi balikStack dijalankan, urutan elemen stack dibalik sehingga elemen terkecil berada di posisi TOP dan hasil akhirnya menjadi 2 3 3 4 8 9. Hal ini menunjukkan bahwa proses penyusunan menaik dan pembalikan stack telah berjalan dengan benar.
 
 ### Soal 1,5 main3.cpp
 
@@ -214,12 +214,11 @@ int main() {
 ```
 > Output
 
-> ![Screenshot bagian x](a1.png)
+> ![Screenshot bagian x](b3.png)
 
 penjelasan kode
 
-Kode main.cpp ini digunakan untuk menguji dan menjalankan seluruh fungsi pada ADT doubly linked list kendaraan. Program dimulai dengan membuat list kosong, lalu meminta pengguna memasukkan data kendaraan dan memastikan nomor polisi tidak boleh duplikat sebelum disimpan ke dalam list. Setelah data berhasil dimasukkan, isi list ditampilkan dari belakang ke depan, kemudian program menyediakan fitur pencarian kendaraan berdasarkan nomor polisi dan menampilkan datanya jika ditemukan. Selanjutnya, pengguna dapat menghapus data kendaraan tertentu, baik itu di awal, di akhir, maupun di tengah list, dan hasil akhir list kembali ditampilkan untuk memastikan data sudah terhapus dengan benar.
-
+Program main.cpp ini digunakan untuk menguji fungsi getInputStream pada ADT stack. Saat program dijalankan, pengguna memasukkan deretan angka dalam satu baris (misalnya 4729601), lalu setiap digit dibaca satu per satu dan dimasukkan ke dalam stack sebagai elemen bertipe integer. Karena stack bekerja dengan prinsip LIFO, hasil printInfo pertama menampilkan elemen dari digit terakhir yang dimasukkan sebagai TOP, yaitu 1 0 6 9 2 7 4. Setelah itu, fungsi balikStack dipanggil untuk membalik urutan stack, sehingga elemen yang semula berada di bawah berpindah ke atas, dan hasil akhirnya menjadi 4 7 2 9 6 0 1. Output ini menunjukkan bahwa proses input stream dan pembalikan stack sudah berjalan dengan benar.
 
 
 ## Referensi
