@@ -1,4 +1,4 @@
-# <h1 align="center">Laporan Praktikum Modul 5 <br>  CODE BLOCKS IDE & PENGENALAN BAHASA C++</h1>
+# <h1 align="center">Laporan Praktikum Modul 6 <br>  CODE BLOCKS IDE & PENGENALAN BAHASA C++</h1>
 <p align="center">elfan endriyanto - 103112430040</p>
 
 ## Dasar Teori
@@ -15,295 +15,215 @@ aku mengerjakan perulangan
 
 ## Unguided
 
-### Soal 1.searcing pembeli
+### Soal 1,1.Doublylist.h
 
 ```go
+#ifndef DOUBLYLIST_H
+#define DOUBLYLIST_H
+#include <string>
+using namespace std;
+
+struct kendaraan {
+    string nopol;
+    string warna;
+    int thnBuat;
+};
+
+typedef kendaraan infotype;
+
+struct ElmList {
+    infotype info;
+    ElmList* next;
+    ElmList* prev;
+};
+
+typedef ElmList* address;
+
+struct List {
+    address First;
+    address Last;
+};
+
+void CreateList(List &L);
+address alokasi(infotype x);
+void dealokasi(address &P);
+void printInfo(List L);
+void insertLast(List &L, address P);
+address findElm(List L, string nopolDicari);
+void deleteFirst(List &L, address &P);
+void deleteLast(List &L, address &P);
+void deleteAfter(address Prec, address &P);
+
+#endif
+
+```
+Program ini menjelaskan tentang mengelola **antrian pembeli** menggunakan **linked list**, di mana setiap pembeli memiliki data **nama** dan **pesanan**. Fitur yang ada di program ini yaitu **menambah antrian**, **melayani antrian (menghapus dari depan)**, **menampilkan seluruh antrian**, serta **mencari pembeli berdasarkan nama**. Data pembeli disimpan berurutan sesuai urutan masuk, dan program berjalan melalui menu sampai pengguna memilih keluar.
+
+### Soal 1,2.Doublylist.cpp
+
+```go
+#include "Doublylist.h"
 #include <iostream>
 using namespace std;
 
-struct Node {
-    string nama;
-    string pesanan;
-    Node* next;
-};
-Node* head = nullptr;
-
-Node* createnode(string nama, string pesanan) {
-    Node* newnode = new Node();
-    newnode->nama = nama;
-    newnode->pesanan = pesanan;
-    newnode->next = nullptr;
-    return newnode;
+void CreateList(List &L) {
+    L.First = NULL;
+    L.Last = NULL;
 }
 
-void tambahantrian(string nama, string pesanan) {
-    Node* newnode = createnode(nama, pesanan);
-    if (head == nullptr) {
-        head = newnode;
+address alokasi(infotype x) {
+    address P = new ElmList;
+    P->info = x;
+    P->next = NULL;
+    P->prev = NULL;
+    return P;
+}
+
+void dealokasi(address P) {
+    delete P;
+}
+
+void printInfo(List L) {
+    address P = L.First;
+    while (P != NULL) {
+        cout << "No Polisi : " << P->info.nopol << endl;
+        cout << "Warna     : " << P->info.warna << endl;
+        cout << "Tahun     : " << P->info.thnBuat << endl << endl;
+        P = P->next;
+    }
+}
+
+void insertLast(List &L, address P) {
+    if (L.First == NULL) {
+        L.First = P;
+        L.Last = P;
     } else {
-        Node* temp = head;
-        while (temp->next != nullptr) {
-            temp = temp->next;
-        }
-        temp->next = newnode;
-    }
-    cout << "pembeli " << nama << " pesanan \"" << pesanan << "\" berhasil ditambahkan ke antrian.\n";
-}
-
-void layaniantrian() {
-    if (head == nullptr) {
-        cout << "tidak ada antrian! tidak ada yang bisa dilayani.\n";
-        return;
-    }
-
-    Node* temp = head;
-    cout << "melayani pembeli: " << temp->nama << " (Pesanan: " << temp->pesanan << ")\n";
-    head = head->next;
-    delete temp;
-}
-
-void tampilkanantrian() {
-    if (head == nullptr) {
-        cout << "tidak ada antrian!!\n";
-        return;
-    }
-
-    Node* temp = head;
-    cout << "\n=== DAFTAR ANTRIAN PEMBELI ===\n";
-    while (temp != nullptr) {
-        cout << "nama: " << temp->nama << " | pesanan: " << temp->pesanan << endl;
-        temp = temp->next;
-    }
-    cout << "===============================\n";
-}
-
-void cariantrian(string namadicari) {
-    if (head == nullptr) {
-        cout << "tidak ada antrian!!\n";
-        return;
-    }
-
-    Node* temp = head;
-    bool ditemukan = false;
-    int posisi = 1;
-
-    while (temp != nullptr) {
-        if (temp->nama == namadicari) {
-            cout << "Pembeli \"" << namadicari << "\" ada pada antrian ke-" 
-                 << posisi << " dengan pesanan \"" << temp->pesanan << "\".\n";
-            ditemukan = true;
-            break; 
-        }
-        temp = temp->next;
-        posisi++;
-    }
-
-    if (!ditemukan) {
-        cout << "Pembeli \"" << namadicari << "\" tidak ada dalam antrian.\n";
+        L.Last->next = P;
+        P->prev = L.Last;
+        L.Last = P;
     }
 }
 
-int main() {
-    int pilihan;
-    string nama, pesanan;
+address findElm(List L, string nopolDicari) {
+    address P = L.First;
+    while (P != NULL) {
+        if (P->info.nopol == nopolDicari)
+            return P;
+        P = P->next;
+    }
+    return NULL;
+}
 
-    do {
-        cout << "\n=== MENU ANTRIAN PEMBELI ===\n";
-        cout << "1. tambah antrian\n";
-        cout << "2. layani antrian\n";
-        cout << "3. tampilkan antrian\n";
-        cout << "4. cari nama pembeli\n";
-        cout << "0. keluar\n";
-        cout << "pilih: ";
-        cin >> pilihan;
+void deleteFirst(List &L, address &P) {
+    P = L.First;
+    if (P == NULL) return;
+    if (L.First == L.Last) {
+        L.First = NULL;
+        L.Last = NULL;
+    } else {
+        L.First = P->next;
+        L.First->prev = NULL;
+    }
+}
 
-        switch (pilihan) {
-            case 1:
-                cout << "masukkan nama pembeli : ";
-                cin >> nama;
-                cout << "masukkan pesanan : ";
-                cin >> pesanan;
-                tambahantrian(nama, pesanan);
-                break;
-            case 2:
-                layaniantrian();
-                break;
-            case 3:
-                tampilkanantrian();
-                break;
-            case 4:
-                cout << "masukkan nama pembeli yang mau dicari: ";
-                cin >> nama;
-                cariantrian(nama);
-                break;
-            case 0:
-                cout << "program selesai.\n";
-                break;
-            default:
-                cout << "pilihan tidak valid!\n";
-        }
-    } while (pilihan != 0);
+void deleteLast(List &L, address &P) {
+    P = L.Last;
+    if (P == NULL) return;
+    if (L.First == L.Last) {
+        L.First = NULL;
+        L.Last = NULL;
+    } else {
+        L.Last = P->prev;
+        L.Last->next = NULL;
+    }
+}
 
-    return 0;
+void deleteAfter(address Prec, address &P) {
+    if (Prec == NULL || Prec->next == NULL) return;
+    P = Prec->next;
+    Prec->next = P->next;
+    if (P->next != NULL)
+        P->next->prev = Prec;
 }
 
 ```
 
-> Output
-> ![Screenshot bagian x](s1.png)
+penjelasan kode
 
-Program ini menjelaskan tentang mengelola **antrian pembeli** menggunakan **linked list**, di mana setiap pembeli memiliki data **nama** dan **pesanan**. Fitur yang ada di program ini yaitu **menambah antrian**, **melayani antrian (menghapus dari depan)**, **menampilkan seluruh antrian**, serta **mencari pembeli berdasarkan nama**. Data pembeli disimpan berurutan sesuai urutan masuk, dan program berjalan melalui menu sampai pengguna memilih keluar.
+Program ini menejelaskan tentang mengelola data buku dengan **linked list**, di mana setiap buku punya data **judul**, **penulis**, dan **ISBN**. Fitur utamanya yaitu **menambah**, **menampilkan**, **mencari**, dan **menghapus** buku berdasarkan ISBN. Semua proses dilakukan lewat menu , dan program berjalan terus sampai pengguna memilih keluar.
 
-### Soal 2.searcing buku
+
+### Soal 1,3.main.cpp
 
 ```go
 #include <iostream>
+#include <string>
+#include "Doublylist.h"
+#include "Doublylist.cpp"
 using namespace std;
 
-struct Node {
-    string ISBN;
-    string judul;
-    string penulis;
-    Node* next;
-};
-Node* head = nullptr;
-
-Node* createnode(string ISBN, string judul, string penulis) {
-    Node* newnode = new Node();
-    newnode->ISBN = ISBN;
-    newnode->judul = judul;
-    newnode->penulis = penulis;
-    newnode->next = nullptr;
-    return newnode;
-}
-
-void tambahbuku(string judul, string penulis, string ISBN) {
-    Node* newnode = createnode(ISBN, judul, penulis);
-    if (head == nullptr) {
-        head = newnode;
-    } else {
-        Node* temp = head;
-        while (temp->next != nullptr) {
-            temp = temp->next;
-        }
-        temp->next = newnode;
-    }
-    cout << "Buku " << judul << ", penulis " << penulis << ", nomor " << ISBN << " berhasil ditambahkan.\n";
-}
-
-void tampilkanbuku() {
-    if (head == nullptr) {
-        cout << "Daftar kosong.\n";
-        return;
-    }
-    Node* temp = head;
-    cout << "\n=== DAFTAR BUKU ===\n";
-    while (temp != nullptr) {
-        cout << "Judul  : " << temp->judul << endl;
-        cout << "Penulis: " << temp->penulis << endl;
-        cout << "ISBN   : " << temp->ISBN << endl;
-        cout << "----------------------\n";
-        temp = temp->next;
-    }
-}
-
-void caribuku(string katakunci) {
-    if (head == nullptr) {
-        cout << "Daftar kosong.\n";
-        return;
-    }
-    Node* temp = head;
-    bool ditemukan = false;
-    cout << "\nHasil buku yang di cari untuk \"" << katakunci << "\":\n";
-    cout << "----------------------------------------\n";
-    while (temp != nullptr) {
-        if (temp->judul == katakunci || temp->penulis == katakunci || temp->ISBN == katakunci) {
-            cout << "Judul  : " << temp->judul << endl;
-            cout << "Penulis: " << temp->penulis << endl;
-            cout << "ISBN   : " << temp->ISBN << endl;
-            cout << "----------------------------------------\n";
-            ditemukan = true;
-        }
-        temp = temp->next;
-    }
-    if (!ditemukan) {
-        cout << "Tidak ada buku yang di cari dengan data \"" << katakunci << "\".\n";
-    }
-}
-
-void hapusbuku(string ISBNhapus) {
-    if (head == nullptr) {
-        cout << "Daftar kosong.\n";
-        return;
-    }
-    Node* temp = head;
-    Node* prev = nullptr;
-    bool dihapus = false;
-    while (temp != nullptr) {
-        if (temp->ISBN == ISBNhapus) {
-            if (prev == nullptr) {
-                head = temp->next;
-            } else {
-                prev->next = temp->next;
-            }
-            cout << "Buku \"" << temp->judul << "\" sudah terhapus.\n";
-            delete temp;
-            dihapus = true;
-            break;
-        }
-        prev = temp;
-        temp = temp->next;
-    }
-    if (!dihapus) {
-        cout << "Buku dengan ISBN \"" << ISBNhapus << "\" tidak ditemukan.\n";
-    }
-}
-
 int main() {
-    int pilihan;
-    string judul, penulis, ISBN, katakunci;
+    List L;
+    CreateList(L);
 
-    do {
-        cout << "\n=== MENU DATA BUKU ===\n";
-        cout << "1. Tambah buku\n";
-        cout << "2. Tampilkan semua buku\n";
-        cout << "3. Cari buku (judul/penulis/ISBN)\n";
-        cout << "4. Hapus buku dengan ISBN\n";
-        cout << "0. Keluar\n";
-        cout << "Pilih: ";
-        cin >> pilihan;
-        getline(cin, judul);
+    infotype x;
+    int validData = 0;
 
-        switch (pilihan) {
-            case 1:
-                cout << "Masukkan judul buku   : ";
-                getline(cin, judul);
-                cout << "Masukkan penulis : ";
-                getline(cin, penulis);
-                cout << "Masukkan ISBN         : ";
-                getline(cin, ISBN);
-                tambahbuku(judul, penulis, ISBN);
-                break;
-            case 2:
-                tampilkanbuku();
-                break;
-            case 3:
-                cout << "Masukkan kata kunci (judul/penulis/ISBN): ";
-                getline(cin, katakunci);
-                caribuku(katakunci);
-                break;
-            case 4:
-                cout << "Masukkan buku yang ingin di hapus ( dengan ISBN ): ";
-                getline(cin, ISBN);
-                hapusbuku(ISBN);
-                break;
-            case 0:
-                cout << "Program selesai.\n";
-                break;
-            default:
-                cout << "Pilihan tidak valid!\n";
+    while (validData < 3) {
+        cout << "masukkan nomor polisi: ";
+        cin >> x.nopol;
+        cout << "masukkan warna kendaraan: ";
+        cin >> x.warna;
+        cout << "masukkan tahun kendaraan: ";
+        cin >> x.thnBuat;
+        cout << endl;
+
+        if (findElm(L, x.nopol) != NULL) {
+            cout << "nomor polisi sudah terdaftar\n\n";
+        } else {
+            insertLast(L, alokasi(x));
+            validData++;
         }
-    } while (pilihan != 0);
+    }
+
+    cout << "\nDATA LIST : \n\n";
+    printInfo(L);
+
+    string cariNopol;
+    cout << "Masukkan Nomor Polisi yang dicari : ";
+    cin >> cariNopol;
+
+    address F = findElm(L, cariNopol);
+    if (F != NULL) {
+        cout << "\nNomor Polisi : " << F->info.nopol << endl;
+        cout << "Warna        : " << F->info.warna << endl;
+        cout << "Tahun        : " << F->info.thnBuat << endl;
+    } else {
+        cout << "Data tidak ditemukan.\n";
+    }
+
+    string delNopol;
+    cout << "\nMasukkan Nomor Polisi yang akan dihapus : ";
+    cin >> delNopol;
+
+    address P = findElm(L, delNopol);
+    if (P != NULL) {
+        if (P == L.First) {
+            deleteFirst(L, P);
+        }
+        else if (P == L.Last) {
+            deleteLast(L, P);
+        }
+        else {
+            deleteAfter(P->prev, P);
+        }
+        cout << "Data dengan nomor polisi " << delNopol << " berhasil dihapus.\n";
+    } else {
+        cout << "Data tidak ditemukan.\n";
+    }
+
+    cout << "\nDATA LIST : \n\n";
+    printInfo(L);
 
     return 0;
 }
