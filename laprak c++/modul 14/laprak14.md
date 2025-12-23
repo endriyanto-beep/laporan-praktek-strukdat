@@ -236,7 +236,7 @@ int main() {
 ```
 > Output
 
-> ![Screenshot bagian x](e1.png)
+> ![Screenshot bagian x](f1.png)
 
 penjelasan kode
 Program main ini menunjukkan cara penggunaan ADT Graph secara lengkap. Pertama, graph dibuat kosong lalu ditambahkan delapan node dari A sampai H. Pada kondisi awal, semua node belum saling terhubung sehingga saat ditampilkan, setiap node masih belum memiliki koneksi. Setelah itu, dilakukan penghubungan antar node menggunakan ConnectNode sehingga terbentuk struktur graph tak berarah dengan H sebagai simpul yang terhubung ke banyak node lain. Graph kemudian ditampilkan kembali untuk memperlihatkan daftar koneksi setiap node. Selanjutnya, program melakukan penelusuran graph dari node A menggunakan DFS, yang menelusuri node sedalam mungkin terlebih dahulu, lalu BFS, yang menelusuri node per level menggunakan queue. Perbedaan urutan hasil DFS dan BFS menunjukkan cara kerja kedua metode traversal tersebut dalam menjelajahi graph.
