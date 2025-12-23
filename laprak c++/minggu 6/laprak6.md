@@ -60,7 +60,7 @@ void deleteAfter(address Prec, address &P);
 
 ```
 
-Program ini menjelaskan tentang mengelola **antrian pembeli** menggunakan **linked list**, di mana setiap pembeli memiliki data **nama** dan **pesanan**. Fitur yang ada di program ini yaitu **menambah antrian**, **melayani antrian (menghapus dari depan)**, **menampilkan seluruh antrian**, serta **mencari pembeli berdasarkan nama**. Data pembeli disimpan berurutan sesuai urutan masuk, dan program berjalan melalui menu sampai pengguna memilih keluar.
+Kode DOUBLYLIST_H merupakan ADT doubly linked list yang digunakan untuk menyimpan data kendaraan seperti nomor polisi, warna, dan tahun pembuatan. Setiap data disimpan dalam node yang saling terhubung ke depan dan ke belakang, sehingga data bisa diakses dari dua arah. Di dalamnya tersedia fungsi untuk membuat list, menambah, menghapus, mencari, dan menampilkan data kendaraan secara berurutan maupun terbalik.
 
 ### Soal 1,2 Doublylist.cpp
 
@@ -169,7 +169,7 @@ void deleteAfter(address Prec, address &P) {
 ```
 penjelasan kode
 
-Program ini menejelaskan tentang mengelola data buku dengan **linked list**, di mana setiap buku punya data **judul**, **penulis**, dan **ISBN**. Fitur utamanya yaitu **menambah**, **menampilkan**, **mencari**, dan **menghapus** buku berdasarkan ISBN. Semua proses dilakukan lewat menu , dan program berjalan terus sampai pengguna memilih keluar.
+Kode Doublylist.cpp ini merupakan implementasi dari ADT doubly linked list yang berfungsi untuk mengelola data kendaraan. Program ini mengatur proses pembuatan list kosong, pembuatan dan penghapusan node, penambahan data di akhir list, pencarian data berdasarkan nomor polisi, serta penampilan data dari depan maupun dari belakang. Selain itu, tersedia juga operasi penghapusan data seperti menghapus elemen pertama, terakhir, dan elemen setelah node tertentu dengan tetap menjaga hubungan pointer next dan prev agar struktur list tetap benar.
 
 ### Soal 1,3 main.cpp
 
@@ -257,9 +257,7 @@ int main() {
 
 penjelasan kode
 
-Program ini menejelaskan tentang mengelola data buku dengan **linked list**, di mana setiap buku punya data **judul**, **penulis**, dan **ISBN**. Fitur utamanya yaitu **menambah**, **menampilkan**, **mencari**, dan **menghapus** buku berdasarkan ISBN. Semua proses dilakukan lewat menu , dan program berjalan terus sampai pengguna memilih keluar.
-
-
+Kode main.cpp ini digunakan untuk menguji dan menjalankan seluruh fungsi pada ADT doubly linked list kendaraan. Program dimulai dengan membuat list kosong, lalu meminta pengguna memasukkan data kendaraan dan memastikan nomor polisi tidak boleh duplikat sebelum disimpan ke dalam list. Setelah data berhasil dimasukkan, isi list ditampilkan dari belakang ke depan, kemudian program menyediakan fitur pencarian kendaraan berdasarkan nomor polisi dan menampilkan datanya jika ditemukan. Selanjutnya, pengguna dapat menghapus data kendaraan tertentu, baik itu di awal, di akhir, maupun di tengah list, dan hasil akhir list kembali ditampilkan untuk memastikan data sudah terhapus dengan benar.
 
 
 ## Referensi
