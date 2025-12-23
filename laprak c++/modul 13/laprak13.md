@@ -228,10 +228,12 @@ int main() {
 ```
 > Output
 
-> ![Screenshot bagian x](d1.png)
+> ![Screenshot bagian x](e1.png)
+
+> ![Screenshot bagian x](e2.png)
 
 penjelasan kode
-Program main.cpp ini digunakan untuk menguji implementasi Binary Search Tree (BST). Program dimulai dengan membuat tree kosong, lalu beberapa nilai dimasukkan ke dalam tree menggunakan fungsi insertNode, di mana nilai yang lebih kecil akan ditempatkan di sebelah kiri dan nilai yang lebih besar di sebelah kanan sesuai aturan BST, sedangkan data yang sama akan diabaikan. Setelah semua data dimasukkan, fungsi InOrder traversal dipanggil untuk menampilkan isi tree, sehingga output yang dihasilkan berupa data yang sudah tersusun secara menaik, yaitu 1 - 2 - 3 - 4 - 5 - 6 - 7 -. Output ini menunjukkan bahwa struktur BST dan proses traversal telah berjalan dengan benar.
+Program circular list ini digunakan untuk menyimpan data mahasiswa dan melakukan penyisipan secara terurut berdasarkan NIM. Data mahasiswa dibuat terlebih dahulu menggunakan fungsi createData, lalu dimasukkan ke dalam list dengan insertSortedByNIM sehingga urutan data otomatis rapi dari NIM terkecil ke terbesar. Karena list bersifat circular, elemen terakhir akan menunjuk kembali ke elemen pertama, namun saat ditampilkan menggunakan printInfo, data ditelusuri satu putaran penuh sehingga semua mahasiswa tercetak dengan lengkap. Dari output terlihat bahwa seluruh data berhasil disimpan dan ditampilkan sesuai urutan NIM tanpa terputus.
 
 ### Soal 2,1 multilist.h
 
@@ -555,11 +557,10 @@ int main() {
 ```
 > Output
 
-> ![Screenshot bagian x](d1.png)
+> ![Screenshot bagian x](e3.png)
 
 penjelasan kode
-Program main.cpp ini digunakan untuk menguji implementasi Binary Search Tree (BST). Program dimulai dengan membuat tree kosong, lalu beberapa nilai dimasukkan ke dalam tree menggunakan fungsi insertNode, di mana nilai yang lebih kecil akan ditempatkan di sebelah kiri dan nilai yang lebih besar di sebelah kanan sesuai aturan BST, sedangkan data yang sama akan diabaikan. Setelah semua data dimasukkan, fungsi InOrder traversal dipanggil untuk menampilkan isi tree, sehingga output yang dihasilkan berupa data yang sudah tersusun secara menaik, yaitu 1 - 2 - 3 - 4 - 5 - 6 - 7 -. Output ini menunjukkan bahwa struktur BST dan proses traversal telah berjalan dengan benar.
-
+Program multilist ini merupakan implementasi struktur data multi linked list yang digunakan untuk merepresentasikan hubungan satu ke banyak (one-to-many) antara data induk dan data anak. Pada program utama, dibuat sebuah list induk yang kemudian diisi dengan tiga elemen induk. Setiap elemen induk memiliki list anak sendiri yang awalnya kosong. Selanjutnya, beberapa elemen anak dialokasikan dan dimasukkan ke list anak dari induk tertentu, sehingga satu induk dapat memiliki lebih dari satu anak, sementara induk lain bisa saja tidak memiliki anak. Fungsi printInfo digunakan untuk menampilkan seluruh data induk beserta anak-anak yang terhubung dengannya, sedangkan fungsi nbList dan nbListAnak digunakan untuk menghitung jumlah elemen induk serta jumlah elemen anak pada induk tertentu. Hasil keluaran menunjukkan bahwa struktur multilist mampu mengelola data secara hierarkis dan terorganisir dengan baik sesuai konsep relasi one-to-many.
 
 ## Referensi
 
