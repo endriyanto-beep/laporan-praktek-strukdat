@@ -172,10 +172,10 @@ int main() {
 ```
 > Output
 
-> ![Screenshot bagian x](c1.png)
+> ![Screenshot bagian x](d1.png)
 
 penjelasan kode
-Program main.cpp ini menunjukkan hasil pengujian ADT queue berbasis array. Dari output terlihat bahwa pada awal program queue masih kosong dengan nilai head dan tail sama-sama -1. Saat operasi enqueue dilakukan, data masuk ke queue secara berurutan dan posisi tail bertambah, sedangkan head tetap di awal. Ketika dequeue dijalankan, elemen paling depan dihapus sesuai konsep FIFO, lalu isi queue bergeser ke depan sehingga urutan data tetap rapi. Proses ini terus berlangsung sampai semua data habis, dan pada kondisi akhir queue kembali kosong dengan head dan tail bernilai -1.
+Program main.cpp ini digunakan untuk menguji implementasi Binary Search Tree (BST). Program dimulai dengan membuat tree kosong, lalu beberapa nilai dimasukkan ke dalam tree menggunakan fungsi insertNode, di mana nilai yang lebih kecil akan ditempatkan di sebelah kiri dan nilai yang lebih besar di sebelah kanan sesuai aturan BST, sedangkan data yang sama akan diabaikan. Setelah semua data dimasukkan, fungsi InOrder traversal dipanggil untuk menampilkan isi tree, sehingga output yang dihasilkan berupa data yang sudah tersusun secara menaik, yaitu 1 - 2 - 3 - 4 - 5 - 6 - 7 -. Output ini menunjukkan bahwa struktur BST dan proses traversal telah berjalan dengan benar.
 
 ### Soal 2 main2.cpp
 
@@ -214,10 +214,10 @@ int main() {
 ```
 > Output
 
-> ![Screenshot bagian x](c1.png)
+> ![Screenshot bagian x](d2.png)
 
 penjelasan kode
-Program main.cpp ini menunjukkan hasil pengujian ADT queue berbasis array. Dari output terlihat bahwa pada awal program queue masih kosong dengan nilai head dan tail sama-sama -1. Saat operasi enqueue dilakukan, data masuk ke queue secara berurutan dan posisi tail bertambah, sedangkan head tetap di awal. Ketika dequeue dijalankan, elemen paling depan dihapus sesuai konsep FIFO, lalu isi queue bergeser ke depan sehingga urutan data tetap rapi. Proses ini terus berlangsung sampai semua data habis, dan pada kondisi akhir queue kembali kosong dengan head dan tail bernilai -1.
+Program main.cpp ini merupakan pengujian lanjutan dari ADT Binary Search Tree (BST). Setelah tree diisi dengan beberapa nilai, program menampilkan isi tree menggunakan traversal InOrder sehingga data terlihat sudah terurut menaik. Selanjutnya, program menghitung dan menampilkan kedalaman tree, jumlah node, serta total nilai seluruh node. Dari output terlihat bahwa tree memiliki kedalaman 5, jumlah node sebanyak 7 (karena nilai duplikat tidak dimasukkan), dan total nilai seluruh node adalah 28. Hasil ini menunjukkan bahwa seluruh fungsi BST—mulai dari penyisipan, traversal, hingga perhitungan—telah berjalan dengan benar.
 
 ### Soal 3 main3.cpp
 
@@ -258,16 +258,10 @@ int main() {
 ```
 > Output
 
-> ![Screenshot bagian x](c1.png)
+> ![Screenshot bagian x](d3.png)
 
 penjelasan kode
-Program main.cpp ini menunjukkan hasil pengujian ADT queue berbasis array. Dari output terlihat bahwa pada awal program queue masih kosong dengan nilai head dan tail sama-sama -1. Saat operasi enqueue dilakukan, data masuk ke queue secara berurutan dan posisi tail bertambah, sedangkan head tetap di awal. Ketika dequeue dijalankan, elemen paling depan dihapus sesuai konsep FIFO, lalu isi queue bergeser ke depan sehingga urutan data tetap rapi. Proses ini terus berlangsung sampai semua data habis, dan pada kondisi akhir queue kembali kosong dengan head dan tail bernilai -1.
-
-
-penjelasan kode
-
-Program main.cpp ini digunakan untuk menguji ADT circular queue dengan variabel count. Dari hasil output terlihat bahwa queue pada awalnya kosong dengan nilai head dan tail -1. Saat dilakukan operasi enqueue, data masuk ke dalam queue secara berurutan dan posisi tail berpindah sesuai mekanisme melingkar, sementara jumlah elemen dicatat oleh count. Ketika dequeue dijalankan, elemen paling depan dihapus, head berpindah ke posisi berikutnya, dan count berkurang. Proses ini terus berlangsung hingga seluruh data keluar dari queue dan akhirnya queue kembali kosong. Output tersebut menunjukkan bahwa pengelolaan queue berjalan dengan benar dan tetap mengikuti konsep FIFO (First In First Out).
-
+Program main.cpp ini digunakan untuk menguji tiga jenis traversal pada Binary Search Tree (BST). Setelah beberapa nilai dimasukkan ke dalam tree sesuai aturan BST, program menampilkan hasil InOrder, PreOrder, dan PostOrder. Output InOrder menunjukkan data dalam urutan menaik, PreOrder menampilkan urutan akar lalu subtree kiri dan kanan, sedangkan PostOrder menampilkan subtree kiri, subtree kanan, lalu akar. Hasil output yang ditampilkan sudah sesuai dengan teori traversal BST, sehingga dapat disimpulkan bahwa struktur tree dan fungsi traversal bekerja dengan benar.
 
 ## Referensi
 
