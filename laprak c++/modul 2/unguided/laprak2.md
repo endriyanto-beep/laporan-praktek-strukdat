@@ -1,4 +1,4 @@
-<img width="303" height="57" alt="image" src="https://github.com/user-attachments/assets/aa8ea0c1-4fc1-43f5-a600-829e5bf6994f" /># <h1 align="center">Laporan Praktikum Modul 2 <br>  CODE BLOCKS IDE & PENGENALAN BAHASA C++</h1>
+# <h1 align="center">Laporan Praktikum Modul 2 <br> PENGENALAN BAHASA C++ (BAGIAN KEDUA)</h1>
 <p align="center">elfan endriyanto - 103112430040</p>
 
 ## Dasar Teori
@@ -147,6 +147,7 @@ Jawabannya:
 Data pada array dapat kita isi ulang dengan cara seperti ini:<br>
 `huruf[2] = 'z';`<br>
 Maka isi array `huruf` pada indeks ke-2 akan bernilai z`.
+
 ## Guided
 
 ### soal 1
@@ -169,6 +170,7 @@ int main()
 
 ```
 > Output
+
 > <img width="613" height="196" alt="image" src="https://github.com/user-attachments/assets/92aedefe-18f2-4e11-92cc-8b62ba215474" />
 
 penjelasan kode 
@@ -203,7 +205,8 @@ int main()
 
 
 ```
-> Output
+>Output
+
 > <img width="840" height="139" alt="image" src="https://github.com/user-attachments/assets/1bbdc6d3-d0f5-4665-a1dc-23bb1e92e0fa" />
 
 penjelasan kode 
@@ -234,6 +237,7 @@ int main()
 
 ```
 > Output
+
 > <img width="693" height="136" alt="image" src="https://github.com/user-attachments/assets/1c217c1f-73c2-4f94-87df-1e7e8404a0a4" />
 
 penjelasan kode 
@@ -269,6 +273,7 @@ int main()
 }
 ```
 > Output
+
 ><img width="460" height="269" alt="image" src="https://github.com/user-attachments/assets/61a49490-cec6-4b02-afbd-5cc40557e6b7" />
 
 penjelasan kode 
@@ -302,6 +307,7 @@ int main()
 
 ```
 > Output
+
 > <img width="567" height="118" alt="image" src="https://github.com/user-attachments/assets/065bdc04-5681-4e97-ae0d-1868f16c117d" />
 
 penjelasan kode 
@@ -335,6 +341,7 @@ int main()
 
 ```
 > Output
+
 > <img width="554" height="103" alt="image" src="https://github.com/user-attachments/assets/f515b654-97dc-4e3f-bc5c-77f8a371f1f9" />
 
 penjelasan kode 
@@ -368,6 +375,7 @@ void tukar(int *px, int *py)
 
 ```
 > Output
+
 > <img width="372" height="74" alt="image" src="https://github.com/user-attachments/assets/6a57d654-3cac-4692-bb2a-3b9b492da5b7" />
 
 penjelasan kode 
@@ -401,6 +409,7 @@ void tukar(int &x, int &y)
 
 ```
 > Output
+> 
 > <img width="303" height="57" alt="image" src="https://github.com/user-attachments/assets/38864aa3-5c11-4fe9-8ed5-b7b6a6e609c1" />
 
 penjelasan kode 
@@ -433,6 +442,7 @@ int main()
 
 ```
 > Output
+
 > <img width="458" height="79" alt="image" src="https://github.com/user-attachments/assets/baa9eebc-2716-4bb5-a0b1-c18c33a72a1d" />
 
 penjelasan kode 
@@ -484,6 +494,7 @@ int main() {
 
 ```
 > Output
+
 > ![Screenshot bagian x](soal1.png)
 
 penjelasan kode 
@@ -517,6 +528,7 @@ int main() {
 ```
 
 > Output
+
 > ![Screenshot bagian x](soal2.png)
 
 penjelasan kode
