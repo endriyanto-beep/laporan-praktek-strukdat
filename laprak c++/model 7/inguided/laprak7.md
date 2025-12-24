@@ -1,5 +1,5 @@
 
-# <h1 align="center">Laporan Praktikum Modul 7 <br>  CODE BLOCKS IDE & PENGENALAN BAHASA C++</h1>
+# <h1 align="center">Laporan Praktikum Modul 7 <br> STACK</h1>
 <p align="center">elfan endriyanto - 103112430040</p>
 
 ## Dasar Teori
