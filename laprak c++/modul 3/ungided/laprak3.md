@@ -1,5 +1,5 @@
 
-# <h1 align="center">Laporan Praktikum Modul 3 <br>  CODE BLOCKS IDE & PENGENALAN BAHASA C++</h1>
+# <h1 align="center">Laporan Praktikum Modul 3 <br> ABSTRACT DATA TYPES (ADT) & SINGLY LINKED LIST (BAGIAN PERTAMA)</h1>
 <p align="center">elfan endriyanto - 103112430040</p>
 
 ## Dasar Teori
@@ -226,6 +226,7 @@ int main()
 
 ```
 > Output
+
 > <img width="282" height="77" alt="image" src="https://github.com/user-attachments/assets/47782f6d-98d7-4ebc-855d-c2fe1c91ce4e" />
 
 penjelasan kodingan
@@ -306,6 +307,7 @@ int main() {
 ```
 
 > Output
+
 > ![Screenshot bagian x](L1.png)
 
 penjelasan kode
@@ -380,6 +382,7 @@ int main() {
 ```
 
 > Output
+
 > ![Screenshot bagian x](L2.png)
 
 penjelasan kode
@@ -437,6 +440,7 @@ int main() {
 ```
 
 > Output
+
 > ![Screenshot bagian x](L3.png)
 
 penjelasan kode
