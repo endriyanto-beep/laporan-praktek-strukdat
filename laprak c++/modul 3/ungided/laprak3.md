@@ -308,6 +308,8 @@ int main() {
 > Output
 > ![Screenshot bagian x](L1.png)
 
+penjelasan kode
+
 Program ini digunakan untuk menyimpan dan menampilkan data maksimal 10 mahasiswa. Setiap mahasiswa punya data berupa nama, NIM, nilai UTS, UAS, tugas, dan nilai akhir. Nilai akhir dihitung otomatis lewat fungsi `hitungNilaiAkhir()` dengan rumus 0.3*UTS + 0.4*UAS + 0.3*Tugas. Program meminta pengguna untuk memasukkan jumlah mahasiswa, lalu mengisi data masing-masing mahasiswa satu per satu menggunakan fungsi `inputMahasiswa()`. Setelah semua data dimasukkan, program menampilkan hasilnya lewat fungsi `tampilMahasiswa()`, yang memperlihatkan seluruh data mahasiswa beserta nilai akhirnya.
 
 ### Soal 2.1.pelajaran.h
@@ -354,6 +356,8 @@ void tampil_pelajaran(pelajaran pel) {
 }
 
 ```
+penjelasan kode
+
 Kode di atas berisi isi dari file **pelajaran.cpp**, yaitu implementasi dari fungsi yang sudah dideklarasikan di pelajaran.h. Fungsi `create_pelajaran` digunakan untuk membuat data pelajaran baru dengan mengisi nama pelajaran dan kodenya, lalu mengembalikannya dalam bentuk struct pelajaran. Sedangkan fungsi `tampil_pelajaran` digunakan untuk menampilkan data pelajaran tersebut ke layar, yaitu nama pelajaran dan kode atau nilainya. Jadi intinya, file ini berfungsi untuk menjalankan logika dari ADT pelajaran yang sudah dibuat di file header.
 
 # Soal 2.3.main.cpp
@@ -377,6 +381,8 @@ int main() {
 
 > Output
 > ![Screenshot bagian x](L2.png)
+
+penjelasan kode
 
 Kode di atas adalah isi dari file main.cpp, yang berfungsi untuk mencoba atau menguji ADT pelajaran yang sudah dibuat. Di dalamnya, dibuat dua variabel string yaitu namaPel berisi “Struktur Data” dan kodePel berisi “STD”. Lalu, program memanggil fungsi create_pelajaran untuk membuat objek pel berdasarkan dua data tersebut, dan hasilnya ditampilkan ke layar dengan memanggil fungsi tampil_pelajaran. Jadi intinya, program ini menampilkan informasi pelajaran dengan nama “Struktur Data” dan kode “STD” menggunakan fungsi dari ADT yang telah dibuat sebelumnya.
 
@@ -432,6 +438,8 @@ int main() {
 
 > Output
 > ![Screenshot bagian x](L3.png)
+
+penjelasan kode
 
 Program di atas membuat dan menampilkan dua buah **matriks (A dan B)** berukuran 3x3, lalu menukar salah satu elemen di posisi tertentu antara kedua matriks. Struktur `Matrix` digunakan untuk menyimpan data dalam bentuk array 3x3, sesuai konsep **ADT (Abstract Data Type)** agar data matriks lebih terorganisir. Fungsi `tampil` menampilkan isi matriks ke layar, sedangkan fungsi `tukar_posisi` menukar elemen pada baris dan kolom tertentu antara matriks A dan B. Dalam program utama, elemen di posisi `[0][2]` (baris pertama kolom ketiga) ditukar, kemudian hasil perubahan kedua matriks ditampilkan kembali ke layar.
 
