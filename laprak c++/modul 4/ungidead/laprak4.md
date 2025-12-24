@@ -403,6 +403,7 @@ int main() {
 ```
 
 > Output
+
 > <img width="527" height="807" alt="image" src="https://github.com/user-attachments/assets/481cafba-b828-4a25-be1d-31aae8e6f59f" />
 
 > <img width="676" height="774" alt="image" src="https://github.com/user-attachments/assets/a851decb-d02f-412a-8131-a317a2fae457" />
@@ -411,6 +412,7 @@ int main() {
 
 
 penjelasan kode
+
 Program ini menampilkan cara kerja single linked list berbasis menu, di mana pengguna dapat menambahkan data di depan, belakang, atau setelah data tertentu, menghapus dan mengupdate data, serta menampilkan isi list, sehingga terlihat bagaimana node saling terhubung dan berubah secara dinamis sesuai operasi yang dipilih.
 ## Unguided
 
