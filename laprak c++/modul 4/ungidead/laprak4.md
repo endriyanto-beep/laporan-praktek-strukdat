@@ -209,6 +209,7 @@ int main() {
 ```
 
 > Output
+
 > <img width="532" height="123" alt="image" src="https://github.com/user-attachments/assets/c1125c04-878f-4939-aa9e-26f4ff8e698f" />
 
 penjelasan kode
@@ -607,6 +608,7 @@ int main() {
 ```
 
 > Output
+
 > ![Screenshot bagian x](e1.png)
 
 penjelasan kode
@@ -688,6 +690,7 @@ int main() {
 ```
 
 > Output
+
 > ![Screenshot bagian x](e3.png)
 
 penjelasan kode
